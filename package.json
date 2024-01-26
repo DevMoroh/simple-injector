@@ -1,0 +1,23 @@
+{
+  "name": "simple-injector",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/src/lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/tests/inject.service.js",
+    "test": "jest -c jest.config.js",
+    "lint": "prettier --check src/",
+    "prepublishOnly": "tsc"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.5",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.4",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "author": "DevMoroh",
+  "homepage": "https://github.com/DevMoroh/simple-injector"
+}
