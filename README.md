@@ -1,12 +1,14 @@
 # Decorator-injector
 **Decorator-injector** is a very lightweight Dependency Injection ts library\
 **Features**:
+- super small ~10 kB
 - built on TypeScript 5.*
 - latest decorator proposal (stage-3) https://github.com/tc39/proposal-decorators 
 - class fields can be decorated
+- no need to use reflect-metadata or other extra packages
 
 ### Examples of usage:
-- Basic example:
+**Register class as DI with decorator:**
 ```typescript
 @Injectable("AnotherService")
 export class AnotherService {
@@ -14,7 +16,9 @@ export class AnotherService {
         console.log("Hello world! Injected AnotherService");
     }
 }
-
+```
+**Inject as class field**
+```typescript
 export class AnotherServiceTwo {
     @Inject("AnotherService") anotherService: AnotherService;
 
@@ -23,7 +27,17 @@ export class AnotherServiceTwo {
     }
 }
 ```
-- Register Knex dependency
+**Register dependency directly (free to customize)**
+```typescript
+register("Knex", {
+    create(args: any[]) {
+        // some logic you might need
+        return new MyClass(args)
+    }
+})
+```
+
+#### Register Knex dependency
 ```typescript
 register("Knex", {
     create(options: { connection?: any }) {
