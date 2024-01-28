@@ -1,11 +1,12 @@
 {
   "name": "decorator-injector",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
-  "main": "./dist/src/lib/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/tests/inject.service.js",
+    "start": "npm run build && node dist/index.js",
     "test": "jest -c jest.config.js",
     "lint": "prettier --check src/",
     "prepublishOnly": "tsc"

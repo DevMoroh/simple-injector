@@ -1,7 +1,7 @@
 # Decorator-injector
 **Decorator-injector** is a very lightweight Dependency Injection ts library\
 **Features**:
-- super small ~10 kB
+- is very small and simple usage
 - built on TypeScript 5.*
 - latest decorator proposal (stage-3) https://github.com/tc39/proposal-decorators 
 - class fields can be decorated
